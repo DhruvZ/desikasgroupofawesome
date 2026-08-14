@@ -164,7 +164,7 @@ powderday::
   >cd powderday
   >python setup.py install
 
-Installations With Intel Compilers (updated for el9 installation by Dhruv as of 6/10/2025)
+Installations With Intel Compilers (updated for el9 installation, powderday reorganization by Dhruv+Ethan as of 8/14/2026)
 -----------------
 
 [3] The set of instructions for the University of Florida
@@ -180,8 +180,8 @@ First, load up the compilers that we'll use throughout::
 
 miscellaneous packages::
 
-  >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy scikit-learn ipython
-  >pip install synphot extinction
+  >conda install numpy scipy cython h5py matplotlib psutil joblib six astropy scikit-learn ipython pandas
+  >pip install synphot extinction p_tqdm
   >conda install mpi4py
 
 yt (version 4.4.0)::
@@ -213,7 +213,7 @@ python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06
   >cd $HOME
   >python -m pip install fsps
 
-python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download.
+python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download. Note that Ethan tried this on the recently released version 0.5.x version and the install did not work for that then.
 
 Set in your .bashrc the analog to::
 
@@ -227,6 +227,7 @@ NOTE - if you get an error trying to run the configure step on EL9 that looks li
   >cd $HOME
   >git clone https://github.com/dnarayanan/hyperion.git
   >cd hyperion
+  >checkout powderday
   >git submodule init
   >git submodule update
   >pip install ".[recommended]"
@@ -237,7 +238,7 @@ NOTE - if you get an error trying to run the configure step on EL9 that looks li
   >make install
   >module unload ufrc
 
-Make sure that whatever directory you put for configure is in your $PATH. You can check whether this is true by typing $PATH in the command line and looking for the <location>/bin directory. The ufrc step is to prevent compiling the binaries in an environment to prevent unexpected behavior. Reactivate your environment at this point.
+Make sure that whatever directory you put for configure is in your $PATH. You can check whether this is true by typing $PATH in the command line and looking for the <location>/bin directory. The ufrc step is to prevent compiling the binaries in an environment to prevent unexpected behavior. Reactivate your environment at this point. 
 
 hyperion dust (commit 66b04df0d06bbd2338ad180bb0ed247cc8d1fe29)::
 
@@ -250,14 +251,14 @@ hyperion dust (commit 66b04df0d06bbd2338ad180bb0ed247cc8d1fe29)::
   >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/vsg.hdf5
   >wget https://github.com/hyperion-rt/paper-galaxy-rt-model/blob/master/dust/usg.hdf5
   
-powderday (commit 00e0fae87e2751ab7a9dcc5760368b818fb1647f) ::
+powderday (commit X) ::
 
-  >git clone https://github.com/dnarayanan/powderday.git
+  >cd $HOME
+  >git clone https://github.com/powderday-rt/powderday
   >cd powderday
   >python setup.py install
 
-
-
+Depending on your application, you may need to ``git checkout helena`` for the most recent pushed version related to the single-photon approximation PAH features.
 
 
   
