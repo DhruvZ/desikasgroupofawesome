@@ -213,7 +213,7 @@ python fsps and fsps (version 0.4.7,commit 30c1fec374ffccb4556d32c9f1ddb73789b06
   >cd $HOME
   >python -m pip install fsps
 
-python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download. Note that Ethan tried this on the recently released version 0.5.x version and the install did not work for that then.
+python-fsps now comes pre-packaged with fsps, so we don't need to install them separately anymore. The --recursive option on the git clone pulls the appropriate version of fsps as well. Here I've installed it with pip because of issues in the past, but there is everything you need to do the manual installation in this download. NOTE: Ethan tried installation with the recently released fsps version 0.5.x version, and the install did not work for powderday then.
 
 Set in your .bashrc the analog to::
 
